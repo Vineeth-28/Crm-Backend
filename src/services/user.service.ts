@@ -1,3 +1,4 @@
+import type { CreateUserDto } from "../dtos/user.dto.js";
 import UserRepository from "../repositories/user.repository.js";
 import { user } from "@prisma/client";
 
@@ -14,6 +15,10 @@ class UserService {
 
   async getAll(): Promise<user[]> {
     return this.userRepository.getAll();
+  }
+
+  async create(userDetails: CreateUserDto): Promise<user> {
+    return this.userRepository.create(userDetails);
   }
 }
 
