@@ -3,9 +3,9 @@ import cors from "cors";
 import { PORT } from "./config/server.config.js";
 import v1router from "./routes/v1/index.js";
 
- //import { PrismaClient } from "@prisma/client";
+//  import { PrismaClient } from "@prisma/client";
 
-//const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 const app: Express = express();
 
@@ -22,7 +22,7 @@ app.get("/ping", (req: Request, res: Response) => {
   });
 });
 
-app.listen(PORT,  () => {
+app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
 
 // const newUser = await prisma.user.create({
