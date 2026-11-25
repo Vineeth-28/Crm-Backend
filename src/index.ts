@@ -3,6 +3,10 @@ import cors from "cors";
 import { PORT } from "./config/server.config.js";
 import v1router from "./routes/v1/index.js";
 
+ //import { PrismaClient } from "@prisma/client";
+
+//const prisma = new PrismaClient();
+
 const app: Express = express();
 
 app.use(cors());
@@ -18,6 +22,17 @@ app.get("/ping", (req: Request, res: Response) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT,  () => {
   console.log(`Server is running on port ${PORT}`);
-});
+
+// const newUser = await prisma.user.create({
+//     data: {
+//       email: "alex@example.com",
+//       name: "Alex",
+//       password: "hashed_password_here", // Remember to hash passwords (e.g., with bcrypt)
+//       // roles is optional because it defaults to [USER], or you can pass:
+//       // roles: [Role.USER, Role.ADMIN],
+//     },
+//   });
+//   console.log("Created user:", newUser);
+})
